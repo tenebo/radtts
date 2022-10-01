@@ -93,7 +93,7 @@
     "model_config": {
         "n_speakers": 1,
         "n_speaker_dim": 16,
-        "n_text": 185,
+        "n_text": 80,
         "n_text_dim": 512,
         "n_flows": 8,
         "n_conv_layers_per_step": 4,

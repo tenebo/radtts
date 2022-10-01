@@ -142,7 +142,6 @@ class TextProcessing(object):
             text_phoneme = self.convert_to_phoneme(text)
             text = text_phoneme
 
-        print(text)
         text_encoded = self.text_to_sequence(text)
 
         if self.prepend_space_to_text:
