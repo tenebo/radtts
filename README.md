@@ -1,3 +1,11 @@
+RADTTS 한국어 추가 버전입니다
+
+### 참조 ###
+- https://github.com/NVIDIA/radtts
+- https://github.com/hccho2/Tacotron2-Wavenet-Korean-TTS
+
+---
+
 # Flow-based TTS with Robust Alignment Learning, Diverse Synthesis, and Generative Modeling and Fine-Grained Control over of Low Dimensional (F0 and Energy) Speech Attributes.
 This repository contains the source code and several checkpoints for our work based on RADTTS. RADTTS is a normalizing-flow-based TTS framework with state of the art acoustic fidelity and a highly robust audio-transcription alignment module. Our project page and some samples can be found [here](https://nv-adlr.github.io/RADTTS), with relevant works listed [here](#relevant-papers).
 
