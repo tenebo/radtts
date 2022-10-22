@@ -1,4 +1,4 @@
-RADTTS 한국어 추가 버전입니다
+RADTTS 한국어 추가 버전입니다 (RADTTS korean version)
 
 ### 참조 ###
 - https://github.com/NVIDIA/radtts

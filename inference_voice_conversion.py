@@ -146,6 +146,15 @@ def infer(radtts_path, radtts_config_path, vocoder_path,
         filename = os.path.splitext(
             os.path.basename(batch['audiopaths'][0]))[0]
         f0_gt, energy_avg_gt = f0.clone(), energy_avg.clone()
+        f0_gt_np=f0_gt[0].cpu().detach().numpy()
+        nonzeros = f0_gt_np[f0_gt_np != 0.0]
+        f0_gt_mean, f0_gt_std = np.mean(nonzeros), np.std(nonzeros)
+        print("!!!!!!!!!!f0 mean:",f0_gt_mean, f0_gt_std)
+
+        energy_avg_np=energy_avg[0].cpu().detach().numpy()
+        nonzeros = energy_avg_np[energy_avg_np != 0.0]
+        energy_avg_mean, energy_avg_std = np.mean(nonzeros), np.std(nonzeros)
+        print("!!!!!!!!!!energy mean:",energy_avg_mean, energy_avg_std)
 
         suffix_path = "sid{}_sigma{}".format(speaker_ids.item(), sigma)
 

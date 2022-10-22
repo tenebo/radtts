@@ -303,7 +303,7 @@ def train(n_gpus, rank, output_directory, epochs, optim_algo, learning_rate,
           include_layers, finetune_layers, warmstart_checkpoint_path,
           use_amp, grad_clip_val, loss_weights,
           binarization_start_iter=-1, kl_loss_start_iter=-1,
-          unfreeze_modules="all", **kwargs):
+          unfreeze_modules="all",constant_checkpoint_path=False, **kwargs):
 
     if seed is None:
         # convert output directory to seed using a hash
@@ -442,8 +442,12 @@ def train(n_gpus, rank, output_directory, epochs, optim_algo, learning_rate,
                         iteration, model, criterion, valset, collate_fn,
                         batch_size, n_gpus, logger=logger,
                         train_config=train_config)
-                    checkpoint_path = "{}/model_{}".format(
+                    if not constant_checkpoint_path:
+                        checkpoint_path = "{}/model_{}".format(
                         output_directory, iteration)
+                    else:
+                        checkpoint_path = "{}/model".format(
+                        output_directory)
                     save_checkpoint(model, optimizer, learning_rate, iteration,
                                     checkpoint_path)
                     print('Validation loss:', val_loss_outputs)
@@ -460,7 +464,9 @@ if __name__ == "__main__":
     parser.add_argument('-c', '--config', type=str,
                         help='JSON file for configuration')
     parser.add_argument('-p', '--params', nargs='+', default=[])
+    parser.add_argument('-k', action='store_true')
     args = parser.parse_args()
+    print(args.k)
     args.rank = 0
 
     # Parse configs.  Globals nicer in this case
@@ -495,4 +501,4 @@ if __name__ == "__main__":
 
     torch.backends.cudnn.enabled = True
     torch.backends.cudnn.benchmark = False
-    train(n_gpus, rank, **train_config)
+    train(n_gpus, rank,constant_checkpoint_path=args.k, **train_config)
