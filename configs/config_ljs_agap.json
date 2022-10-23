@@ -39,7 +39,7 @@
             "LJS": {
                 "basedir": "filelists/",
                 "audiodir": "wavs",
-                "filelist": "ljs_audiopath_text_speaker_train_filelist.txt",
+                "filelist": "ljs_audio_text_train_filelist.txt",
                 "lmdbpath": ""
             }
         },
@@ -47,7 +47,7 @@
             "LJS": {
                 "basedir": "filelists/",
                 "audiodir": "wavs",
-                "filelist": "ljs_audiopath_text_speaker_val_filelist.txt",
+                "filelist": "ljs_audio_text_val_filelist.txt",
                 "lmdbpath": ""
             }
         },
