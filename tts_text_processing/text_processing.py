@@ -206,18 +206,18 @@ if __name__ == "__main__":
     # print(data_config)
 
     tp = TextProcessing(data_config['symbol_set'],data_config['cleaner_names'],data_config['heteronyms_path'],data_config['phoneme_dict_path'],data_config['p_phoneme'],data_config['handle_phoneme'],data_config['handle_phoneme_ambiguous'])
-    # a=tp.encode_text('60.3%')
-    # print(a)
+    a=tp.encode_text('"저돌"(猪突) 입니다.')
+    print(a)
 
-    def test_normalize(text):
-        print(text)
-        print(tp.clean_text(text))
-        print("="*30)
+    # def test_normalize(text):
+    #     print(text)
+    #     print(tp.clean_text(text))
+    #     print("="*30)
 
-    test_normalize("1912년 JTBC는 JTBCs를 DY는 A가 Absolute")
-    test_normalize("오늘(13일) 3,600마리 강아지가")
-    test_normalize("60.3%")
-    test_normalize('"저돌"(猪突) 입니다.')
-    test_normalize('비대위원장이 지난 1월 이런 말을 했습니다. “난 그냥 산돼지처럼 돌파하는 스타일이다”')
-    test_normalize("지금은 -12.35%였고 종류는 5가지와 19가지, 그리고 55가지였다")
-    test_normalize("JTBC는 TH와 K 양이 2017년 9월 12일 오후 12시에 24살이 된다")
+    # test_normalize("1912년 JTBC는 JTBCs를 DY는 A가 Absolute")
+    # test_normalize("오늘(13일) 3,600마리 강아지가")
+    # test_normalize("60.3%")
+    # test_normalize('"저돌"(猪突) 입니다.')
+    # test_normalize('비대위원장이 지난 1월 이런 말을 했습니다. “난 그냥 산돼지처럼 돌파하는 스타일이다”')
+    # test_normalize("지금은 -12.35%였고 종류는 5가지와 19가지, 그리고 55가지였다")
+    # test_normalize("JTBC는 TH와 K 양이 2017년 9월 12일 오후 12시에 24살이 된다")

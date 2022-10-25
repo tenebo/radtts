@@ -336,7 +336,7 @@ def tokenize(text, as_id=False):
     if as_id:
         return [_symbol_to_id[token] for token in tokens]
     else:
-        return [token for token in tokens]
+        return "".join(tokens)
 
 
 def tokenizer_fn(iterator):

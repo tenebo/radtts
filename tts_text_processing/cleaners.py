@@ -22,7 +22,7 @@ from .datestime import normalize_datestime
 from .letters_and_numbers import normalize_letters_and_numbers
 from .abbreviations import normalize_abbreviations
 
-from .korean import normalize as korean_normalize
+from .korean import tokenize as korean_tokenize
 
 # Regular expression matching whitespace:
 _whitespace_re = re.compile(r'\s+')
@@ -111,7 +111,7 @@ class Cleaner(object):
         elif cleaner_name == 'transliteration_cleaners':
             sequence_fns = [convert_to_ascii, lowercase, collapse_whitespace]
         elif cleaner_name == 'korean_cleaners':
-            sequence_fns = [korean_normalize]
+            sequence_fns = [korean_tokenize]
             word_fns = []
         else:
             raise Exception("{} cleaner not supported".format(cleaner_name))
