@@ -6,7 +6,7 @@ Defines the set of symbols used in text input to the model.
 The default is a set of ASCII characters that works well for English or text
 that has been run through Unidecode. For other data, you can modify
 _characters.'''
-from .korean import symbols as korean_symbols
+from .korean_dict import ALL_SYMBOLS as korean_symbols
 
 arpabet = [
     'AA', 'AA0', 'AA1', 'AA2', 'AE', 'AE0', 'AE1', 'AE2', 'AH', 'AH0', 'AH1',
@@ -53,7 +53,7 @@ def get_symbols(symbol_set):
         _arpabet = ["@" + s for s in arpabet]
         symbols = list(_punctuation + _math + _special + _accented + _numbers + _letters) + _arpabet
     elif symbol_set == 'korean':
-        symbols = list(korean_symbols)
+        symbols = korean_symbols
     else:
         raise Exception("{} symbol set does not exist".format(symbol_set))
 

@@ -2,7 +2,7 @@ RADTTS 한국어 추가 버전입니다 (RADTTS korean version)
 
 ### 참조 ###
 - https://github.com/NVIDIA/radtts
-- https://github.com/hccho2/Tacotron2-Wavenet-Korean-TTS
+- https://github.com/keonlee9420/Expressive-FastSpeech2
 
 ---
 

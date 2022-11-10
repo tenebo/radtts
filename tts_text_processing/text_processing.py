@@ -206,8 +206,10 @@ if __name__ == "__main__":
     # print(data_config)
 
     tp = TextProcessing(data_config['symbol_set'],data_config['cleaner_names'],data_config['heteronyms_path'],data_config['phoneme_dict_path'],data_config['p_phoneme'],data_config['handle_phoneme'],data_config['handle_phoneme_ambiguous'])
-    a=tp.encode_text('"저돌"(猪突) 입니다.')
-    print(a)
+    txt='이렇게 세트로 98,000원인데, 지금 세일 중이어서, 78,400원이에요.'
+    a=tp.clean_text(txt)
+    b=tp.encode_text(txt)
+    print(a,b)
 
     # def test_normalize(text):
     #     print(text)

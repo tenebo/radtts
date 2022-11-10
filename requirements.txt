@@ -18,3 +18,4 @@ torchaudio
 git+https://github.com/jfsantos/maracas@master#egg=maracas
 jamo
 nltk
+g2pk2
